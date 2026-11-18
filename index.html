@@ -8,10 +8,33 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500&display=swap');
 *{box-sizing:border-box}body{margin:0;background:#17131a;color:#f7efd9;font-family:'DM Sans',sans-serif}header{min-height:85vh;display:grid;place-items:center;text-align:center;padding:32px;background:radial-gradient(ellipse at 50% 35%,#80664d,#3c2b2c 45%,#17131a 100%)}.frame{border:1px solid #d8b66e88;padding:clamp(28px,7vw,70px);max-width:760px}small,.eyebrow{letter-spacing:.3em;text-transform:uppercase;color:#e6ca8b;font-size:11px}h1{font:500 clamp(48px,9vw,92px)/.95 'Cormorant Garamond',serif;margin:24px 0}header p{font:italic 24px 'Cormorant Garamond';color:#e5d4b4}.gold{height:1px;width:90px;background:#d8b66e;margin:24px auto}main{max-width:1000px;margin:auto;padding:48px 22px}h2{font:500 42px 'Cormorant Garamond';color:#e6ca8b;text-align:center}.letter{max-width:720px;margin:30px auto;padding:32px;border:1px solid #d8b66e66;background:#241c22;font:italic 21px/1.7 'Cormorant Garamond';white-space:pre-line}.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}.gallery figure{margin:0;border:1px solid #d8b66e66;padding:8px;background:#241c22}.gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}.gallery figcaption{text-align:center;padding:10px 4px;color:#e6ca8b;font:italic 18px 'Cormorant Garamond'}footer{text-align:center;padding:35px;color:#bda77d;font-size:11px;letter-spacing:.18em}
+
+.castle-walk{position:relative;min-height:82vh;overflow:hidden;display:grid;place-items:center;text-align:center;background:linear-gradient(180deg,#17131a 0%,#3b2630 42%,#17131a 100%);isolation:isolate}
+.castle-walk:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 42%,#d4a65b44,transparent 52%),linear-gradient(90deg,#120f18 0%,transparent 22%,transparent 78%,#120f18 100%);z-index:-1}
+.arch{position:absolute;left:50%;top:3%;transform:translateX(-50%);width:min(76vw,780px);height:78%;border:18px solid #8c6945;border-bottom:0;border-radius:50% 50% 0 0;box-shadow:inset 0 0 0 7px #d5b27655,0 0 35px #d6a65333}
+.arch:before{content:"";position:absolute;inset:8% 10% 0;border:8px solid #604331;border-bottom:0;border-radius:50% 50% 0 0;background:linear-gradient(180deg,#201822,#65452e 65%,#17131a)}
+.arch:after{content:"";position:absolute;left:50%;bottom:0;width:70%;height:28%;transform:translateX(-50%);background:linear-gradient(180deg,#d8ad6755,transparent);clip-path:polygon(50% 0,100% 100%,0 100%)}
+.pillars{position:absolute;inset:12% 5% 0;display:flex;justify-content:space-between;pointer-events:none}
+.pillar{width:clamp(22px,5vw,58px);height:78%;background:linear-gradient(90deg,#38252a,#b18a58 35%,#6d4a36 72%,#2b2029);border:2px solid #d0a866;box-shadow:0 0 18px #d3a34d33}
+.floor{position:absolute;bottom:0;left:0;right:0;height:35%;background:linear-gradient(180deg,#382630,#17131a);clip-path:polygon(32% 0,68% 0,100% 100%,0 100%)}
+.floor:after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 19%,#d7b16b22 20%,transparent 21% 39%),linear-gradient(180deg,transparent,#d4ae6b22)}
+.torch{position:absolute;top:37%;font-size:clamp(24px,4vw,40px);filter:drop-shadow(0 0 15px #ffb84d);animation:flicker 1.2s infinite alternate}
+.torch.left{left:16%}.torch.right{right:16%}
+.walk-copy{position:relative;z-index:2;padding:26px 20px 160px;max-width:700px}
+.walk-copy h2{font:500 clamp(40px,7vw,72px)/.95 'Cormorant Garamond',serif;color:#f3d99d;text-shadow:0 3px 20px #000}
+.walk-copy p{font:italic 22px 'Cormorant Garamond';color:#f4e7cc}
+.princess-walker{position:absolute;z-index:3;bottom:8%;left:-12%;font-size:clamp(48px,8vw,82px);filter:drop-shadow(0 8px 8px #0009);animation:walkAcross 13s linear infinite}
+.princess-walker span{display:inline-block;animation:step .38s ease-in-out infinite alternate}
+@keyframes walkAcross{0%{left:-12%;transform:scale(.72)}45%{left:44%;transform:scale(1)}100%{left:110%;transform:scale(1.28)}}
+@keyframes step{from{transform:translateY(0) rotate(-5deg)}to{transform:translateY(-7px) rotate(5deg)}}
+@keyframes flicker{from{opacity:.72}to{opacity:1;filter:drop-shadow(0 0 23px #ffd27a)}}
+.enter-btn{display:inline-block;margin-top:14px;padding:13px 24px;border:1px solid #d9b36c;color:#f5dfaa;text-decoration:none;letter-spacing:.14em;text-transform:uppercase;font-size:11px;background:#241b22}
+@media(prefers-reduced-motion:reduce){.princess-walker,.torch,.princess-walker span{animation:none}}
+
 </style></head>
 <body>
 <header><div class="frame"><div class="eyebrow">A royal invitation · made with love</div><div class="gold"></div><h1>Her Royal<br>Highness, Riya</h1><p>A little kingdom, made for one very special girl.</p><div class="gold"></div><small>THE ROYAL ESTATE · EST. FOR ONE</small></div></header>
-<main><section><h2>A letter for my princess</h2><div class="gold"></div><div class="letter">Hello My Princess,
+<section class="castle-walk" aria-label="Riya walking through her castle"><div class="arch"></div><div class="pillars"><i class="pillar"></i><i class="pillar"></i></div><div class="floor"></div><div class="torch left">🕯️</div><div class="torch right">🕯️</div><div class="walk-copy"><div class="eyebrow">The gates are open</div><h2>Welcome to your castle, Princess Riya</h2><p>Every hallway leads to a little more love.</p><a class="enter-btn" href="#letter">Enter your kingdom</a></div><div class="princess-walker" aria-hidden="true"><span>👸🏻</span></div></section><main><section id="letter"><h2>A letter for my princess</h2><div class="gold"></div><div class="letter">Hello My Princess,
 
 Told you and will always mean it from my heart, you are my princess, my heart. I’ll treat you like my princess, I’ll get you the whole world and will make sure that this world consists of only love where only me and you are there.
 
